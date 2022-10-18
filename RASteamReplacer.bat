@@ -1,11 +1,18 @@
 @echo off
-echo Downloading RetroArch from buildbot...
+echo RASteamReplacer - written by Karojen
+echo.
+
+echo Downloading nightly build from buildbot...
 curl https://buildbot.libretro.com/nightly/windows/x86_64/RetroArch.7z --output RetroArch.7z
+echo.
 
-echo Extracting files and folders...
-"C:\Program Files\7-Zip\7z.exe" x RetroArch.7z -o* -aoa
+echo Extracting and replacing files...
+"C:\Program Files\7-Zip\7z.exe" e RetroArch.7z -o. Qt5Core.dll Qt5Gui.dll Qt5Network.dll Qt5Widgets.dll retroarch.exe -r -aoa
+echo.
 
-echo Replacing Steam version files from buildbot version...
-xcopy ".\RetroArch\RetroArch-Win64\" ".\" /s /e /h /y /j
-rmdir /q /s ".\RetroArch"
+echo Cleaning files...
 del /q /f RetroArch.7z
+echo.
+
+echo Completed - exiting program...
+exit
