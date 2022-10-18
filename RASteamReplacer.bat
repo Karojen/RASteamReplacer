@@ -7,7 +7,7 @@ curl https://buildbot.libretro.com/nightly/windows/x86_64/RetroArch.7z --output 
 echo.
 
 echo Extracting and replacing files...
-"C:\Program Files\7-Zip\7z.exe" e RetroArch.7z -o. Qt5Core.dll Qt5Gui.dll Qt5Network.dll Qt5Widgets.dll retroarch.exe -r -aoa
+"C:\Program Files\7-Zip\7z.exe" e RetroArch.7z -o. libcrypto-1_1-x64.dll libpcre2-16-0.dll libssl-1_1-x64.dll libzstd.dll Qt5Core.dll Qt5Gui.dll Qt5Network.dll Qt5Widgets.dll retroarch.exe -r -aoa
 echo.
 
 echo Cleaning files...
